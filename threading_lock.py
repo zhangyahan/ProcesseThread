@@ -89,7 +89,7 @@
 
 
 ################################################
-# 同步对象(event)
+# 同步对象(event事件)
 # import threading
 # import time
 #
@@ -172,6 +172,51 @@
 #         t.join()
 #
 #     print('ending......')
+
+#################条件####################
+# from threading import Condition, Thread
+
+
+# def condition():
+#     ret = False
+#     inp = input('>>>')
+#     if inp == 'True':
+#         ret = True
+#     else:
+#         ret = False
+#     return ret
+
+
+# def run(i, con):
+#     print(i)
+#     con.acquire()  # 对条件进行上锁
+#     con.wait_for(condition)  # 等待条件成立
+#     print(i + 100)
+#     con.release()  # 解除条件
+
+
+# if __name__ == "__main__":
+#     con = Condition()  # 创建条件对象
+#     for i in range(10):
+#         t = Thread(target=run, args=(i, con))
+#         t.start()
+    # while 1:
+    #     inp = input('>>>')
+    #     if inp == 'Q':
+    #         break
+    #     con.acquire()
+    #     con.notify(int(inp))
+    #     con.release()
+
+
+##############定时器################
+# from threading import Timer
+
+# def hello():
+#     print('hello')
+
+# t = Timer(3, hello)
+# t.start()
 
 
 ##########################################
